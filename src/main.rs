@@ -1,8 +1,23 @@
+use rand::Rng;
+
 fn add() -> i32 {
     const REP: i32 = 344;
     let a = 34;
     let b = 242;
     a + b + REP
+}
+
+fn return_days(intt: i32) {
+    match intt {
+        1 => println!("Monday"),
+        2 => println!("Tuesday"),
+        3 => println!("Wednesday"),
+        4 => println!("Thursday"),
+        5 => println!("Friday"),
+        6 => println!("Saturday"),
+        7 => println!("Sunday"),
+        _ => println!("Invalid day"),
+    }
 }
 
 fn main() {
@@ -38,4 +53,7 @@ fn main() {
         7 => println!("Sunday"),
         _ => println!("Invalid day."),
     }
+    let mut rand_int = rand::thread_rng();
+    let n = rand_int.gen_range(1..=7);
+    return_days(n)
 }
